@@ -181,6 +181,8 @@ This provides the maximum possible upload speed especially with lots
 of small files, however rclone can't check the file got uploaded
 properly using this mode.
 
+Note: This is only recommended if you are using rclone sync or rclone copy, as using async mode with rclone move for example will cause the source files to be deleted once committing is done, regardless of the commit succeeding or not.
+
 If you are using this mode then using "rclone check" after the
 transfer completes is recommended. Or you could do an initial transfer
 with `--dropbox-batch-mode async` then do a final transfer with
